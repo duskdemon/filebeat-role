@@ -5,3 +5,12 @@
     name: filebeat
     state: restarted
   when: ansible_virtualization_type != 'docker'
+# tried to fix this:
+# fatal: [ubuntu]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'dict object' has no attribute 'default_ipv4'"}
+# but it doesnt help
+#- name: install iproute2
+#  become: true
+#  apt:
+#    name: iproute2
+#    state: present
+#  when: ansible_virtualization_type != 'docker'

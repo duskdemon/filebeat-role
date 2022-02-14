@@ -1,4 +1,16 @@
 ---
+# tried to fix this:
+# fatal: [ubuntu]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'dict object' has no attribute 'default_ipv4'"}
+# but it doesnt help
+#- name: Pre-install iproute2 for ubuntu
+#  become: true
+#  apt: 
+#    name: iproute2
+#    state: present
+#  notify: install iproute2
+#- name: re-gather ipv4 address
+#  setup:
+#    filter: ansible_default_ipv4.address
 - name: Install filebeat
   become: true
   apt:
